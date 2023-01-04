@@ -1,10 +1,10 @@
 #import git
 import json
 
-"""
-repo=git.Repo('https://github.com/ncr-swt-hospitality/chef-cfc-databag/blob/master/environment/versions_qa_hyd_host2.json')
+
+repo=git.Repo('https://github.com/ncr-swt-hospitality/chef-cfc-databag')
 p=repo.remotes.origin
-p.pull()"""
+p.pull()
 
 
 def add_version(data, filename='versions_hyd_host2.json'):
