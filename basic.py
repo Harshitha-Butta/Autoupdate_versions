@@ -1,5 +1,5 @@
 import git
-from git import repo
+from git import Repo
 import json
 
 
@@ -28,5 +28,5 @@ add_version(data)
 
 g.add('--all')
 g.commit('-m', 'commit message from python script', author='harshitha.butta@gmail.com')
-origin = repo.remote(name='origin')
+origin = Repo.remote(name='origin')
 origin.push()
