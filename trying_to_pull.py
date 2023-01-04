@@ -1,7 +1,9 @@
-from git import Repo
+"""from git import Repo
 
-repo=Repo('https:\\github.com\Harshitha-Butta\Autoupdate_versions\blob\main\versions_hyd_host2.json')
+repo=Repo('https:\\github.com\Harshitha-Butta\Autoupdate_versions')
 
-p=repo.remotes.origin
+p=repo.remotes.origin"""
+import git 
 
-p.pull()
+g = git.cmd.Git('https:\\github.com\Harshitha-Butta\Autoupdate_versions')
+g.pull()
