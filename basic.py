@@ -32,5 +32,5 @@ add_version(data)
 
 g.add('--all')
 g.commit('-m', 'commit message from python script', author='harshitha.butta@gmail.com')
-origin = Repo.remote
+origin = g.remote(name='origin')
 origin.push()
