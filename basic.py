@@ -1,10 +1,9 @@
-#import git
+import git
 import json
 
 
-repo=git.Repo('https://github.com/ncr-swt-hospitality/chef-cfc-databag')
-p=repo.remotes.origin
-p.pull()
+g = git.cmd.Git('https:\\github.com\Harshitha-Butta\Autoupdate_versions')
+g.pull()
 
 
 def add_version(data, filename='versions_hyd_host2.json'):
@@ -26,3 +25,7 @@ with open('versions_hyd_host2.json') as f:
 
 add_version(data)
 
+g.add('--all')
+g.commit('-m', 'commit message from python script', author='harshitha.butta@gmail.com')
+origin = g.remote(name='origin')
+origin.push()
