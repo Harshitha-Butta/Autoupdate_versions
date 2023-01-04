@@ -1,6 +1,8 @@
 import git
-from git import Repo
+#from git import Repo
 import json
+
+from git import repo
 
 
 g = git.cmd.Git('https:\\github.com\Harshitha-Butta\Autoupdate_versions')
@@ -28,5 +30,5 @@ add_version(data)
 
 g.add('--all')
 g.commit('-m', 'commit message from python script', author='harshitha.butta@gmail.com')
-origin = Repo.remote(name='origin')
+origin = repo.remote(name='origin')
 origin.push()
