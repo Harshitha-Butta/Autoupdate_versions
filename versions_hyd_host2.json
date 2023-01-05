@@ -36,7 +36,6 @@
             "21.9.0.41": true,
             "21.9.0.42": true,
             "21.9.0.45": true,
-            "& C:/Users/hb185098/Anaconda3/python.exe \"c:/git practice/Connecting_to_remote_repo/Autoupdate_versions/basic.py\"": true,
             "21.9.0.47": true
         },
         "standalone_update_use_latest_local_version": true,
