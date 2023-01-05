@@ -1,8 +1,5 @@
 import git
-#from git import Repo
 import json
-
-#from git import repo
 from git import Repo
 
 g = git.cmd.Git('https:\\github.com\Harshitha-Butta\Autoupdate_versions')
@@ -24,8 +21,6 @@ with open('versions_hyd_host2.json') as f:
     data['configuration']['hosted_installers_latest']=version
     data['configuration']['aem_host_last_version']=version
     f.seek(0)
-    #json.dump(data, f,indent=4)
-    #f.truncate()
 
 add_version(data)
 
