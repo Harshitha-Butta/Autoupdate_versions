@@ -29,7 +29,7 @@ with open('versions_hyd_host2.json') as f:
 
 add_version(data)
 
-#repo=Repo('https:\\github.com\Harshitha-Butta\Autoupdate_versions\')
+repo=Repo(r'C:\git practice\Connecting_to_remote_repo\Autoupdate_versions')
 
 g.add('--all')
 g.commit('-m', 'commit message from python script', author='harshitha.butta@gmail.com')
