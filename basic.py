@@ -14,7 +14,8 @@ def add_version(data, filename='versions_hyd_host2.json'):
         json.dump(data, f,indent=4)
         
 
-version=input()
+#version=input()
+version = '21.9.0.42'
 with open('versions_hyd_host2.json') as f:
     data=json.load(f)
     data['configuration']['cfc_versions'][version]=True
@@ -32,5 +33,5 @@ add_version(data)
 
 g.add('--all')
 g.commit('-m', 'commit message from python script', author='harshitha.butta@gmail.com')
-origin = git.repo.remote("origin")
+origin = git.remote("origin")
 origin.push()
