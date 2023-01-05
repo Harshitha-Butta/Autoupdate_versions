@@ -15,7 +15,7 @@ def add_version(data, filename='versions_hyd_host2.json'):
         
 
 #version=input()
-version = '21.9.0.42'
+version = '21.9.0.47'
 with open('versions_hyd_host2.json') as f:
     data=json.load(f)
     data['configuration']['cfc_versions'][version]=True
