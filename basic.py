@@ -4,8 +4,8 @@ from git import Repo
 import os
 
 g = git.cmd.Git('https:\\github.com\\Harshitha-Butta\\Autoupdate_versions')
-g.pull()
 
+g.pull()
 
 def add_version(data, filename='versions_hyd_host2.json'):
     with open(filename,'w') as f:
@@ -13,14 +13,9 @@ def add_version(data, filename='versions_hyd_host2.json'):
         
 
 #version=input()
-<<<<<<< HEAD
 version = '21.9.0.47'
 #version=os.environ['version']
-=======
-#version = '21.9.0.47'
-version=os.environ['version']
 
->>>>>>> cfc-hb
 with open('versions_hyd_host2.json') as f:
     data=json.load(f)
     data['configuration']['cfc_versions'][version]=True
@@ -32,8 +27,7 @@ with open('versions_hyd_host2.json') as f:
 
 add_version(data)
 
-repo=Repo(r'C:\\git practice\\Connecting_to_remote_repo\\Autoupdate_versions')
-
+repo = Repo('C:\\git practice\\Connecting_to_remote_repo\\Autoupdate_versions')
 g.add('--all')
 g.commit('-m', 'commit message from python script', author='harshitha.butta@gmail.com')
 origin = repo.remote(name="origin")
