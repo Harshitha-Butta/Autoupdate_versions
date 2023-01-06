@@ -39,8 +39,3 @@ origin.push()
 g.checkout('main')
 g.push()
 
-master = repo.branches['main']
-current = repo.branches['cfc-hb']
-root = repo.merge_base(current, master)
-repo.index.merge_tree(master, base=root)
-repo.index.commit('merging current into master branch', parent_commits=(current.commit, master.commit))
