@@ -35,8 +35,8 @@ add_version(data)
 
 repo=Repo(r'C:\git practice\checkout_branch\Autoupdate_versions')
 
-g.add('--all')
-g.commit('-m', 'commit message from python script', author='harshitha.butta@gmail.com')
+repo.add('--all')
+repo.commit('-m', 'commit message from python script', author='harshitha.butta@gmail.com')
 origin = repo.remote(name="origin")
 origin.push()
 g.checkout('main')
