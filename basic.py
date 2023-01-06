@@ -1,15 +1,15 @@
 import git
 import json
 from git import Repo
-from git import Git
 import os
 
 g = git.cmd.Git('https:\\github.com\\Harshitha-Butta\\Autoupdate_versions')
 g.pull()
 
+from git import Git
+g1=Git()
 
-g1 = Git()
-g1.checkout("cfc-hb")
+g1.checkout('cfc-hb')
 g1.pull()
 
 
@@ -19,8 +19,9 @@ def add_version(data, filename='versions_hyd_host2.json'):
         
 
 #version=input()
-version = '21.9.0.47'
+version = '21.9.0.49'
 #version=os.environ['version']
+
 with open('versions_hyd_host2.json') as f:
     data=json.load(f)
     data['configuration']['cfc_versions'][version]=True
@@ -38,3 +39,10 @@ g.add('--all')
 g.commit('-m', 'commit message from python script', author='harshitha.butta@gmail.com')
 origin = repo.remote(name="origin")
 origin.push()
+g1.checkout('main')
+
+master = repo.branches['main']
+current = repo.branches['cfc-hb']
+root = repo.merge_base(current, master)
+repo.index.merge_tree(master, base=root)
+repo.index.commit('merging current into master branch', parent_commits=(current.commit, master.commit))
