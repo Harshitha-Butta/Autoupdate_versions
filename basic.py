@@ -19,7 +19,7 @@ def add_version(data, filename='versions_hyd_host2.json'):
         
 
 #version=input()
-version = '21.9.0.47'
+version = '21.9.0.49'
 #version=os.environ['version']
 
 with open('versions_hyd_host2.json') as f:
