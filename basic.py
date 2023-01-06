@@ -9,8 +9,8 @@ g.pull()
 from git import Git
 g1=Git()
 
-g1.checkout('cfc-hb')
-g1.pull()
+g.checkout('cfc-hb')
+g.pull()
 
 
 def add_version(data, filename='versions_hyd_host2.json'):
@@ -35,11 +35,11 @@ add_version(data)
 
 repo=Repo(r'C:\git practice\checkout_branch\Autoupdate_versions')
 
-g1.add('--all')
-g1.commit('-m', 'commit message from python script', author='harshitha.butta@gmail.com')
+g.add('--all')
+g.commit('-m', 'commit message from python script', author='harshitha.butta@gmail.com')
 origin = repo.remote(name="origin")
 origin.push()
-g1.checkout('main')
+g.checkout('main')
 
 master = repo.branches['main']
 current = repo.branches['cfc-hb']
