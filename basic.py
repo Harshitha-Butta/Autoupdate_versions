@@ -36,6 +36,4 @@ g.add('--all')
 repo.commit('commit message from python script')
 origin = repo.remote(name="origin")
 origin.push()
-g.checkout('main')
-g.push()
 
