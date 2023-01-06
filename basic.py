@@ -6,6 +6,12 @@ import os
 g = git.cmd.Git('https:\\github.com\\Harshitha-Butta\\Autoupdate_versions')
 g.pull()
 
+from git import Git
+g1=Git()
+
+g1.checkout('cfc-hb')
+g1.pull()
+
 
 def add_version(data, filename='versions_hyd_host2.json'):
     with open(filename,'w') as f:
@@ -27,7 +33,7 @@ with open('versions_hyd_host2.json') as f:
 
 add_version(data)
 
-repo=Repo(r'C:\\git practice\\Connecting_to_remote_repo\\Autoupdate_versions')
+repo=Repo(r'C:\git practice\checkout_branch\Autoupdate_versions')
 
 g.add('--all')
 g.commit('-m', 'commit message from python script', author='harshitha.butta@gmail.com')
