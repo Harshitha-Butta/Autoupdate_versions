@@ -39,3 +39,10 @@ g.add('--all')
 g.commit('-m', 'commit message from python script', author='harshitha.butta@gmail.com')
 origin = repo.remote(name="origin")
 origin.push()
+g1.checkout('main')
+
+master = repo.branches['main']
+current = repo.branches['cfc-hb']
+root = repo.merge_base(current, master)
+repo.index.merge_tree(master, base=root)
+repo.index.commit('merging current into master branch', parent_commits=(current.commit, master.commit))
