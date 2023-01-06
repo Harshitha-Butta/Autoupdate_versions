@@ -1,6 +1,7 @@
 import git
 import json
 from git import Repo
+import os
 
 g = git.cmd.Git('https:\\github.com\Harshitha-Butta\Autoupdate_versions')
 g.pull()
@@ -13,6 +14,7 @@ def add_version(data, filename='versions_hyd_host2.json'):
 
 #version=input()
 version = '21.9.0.47'
+#version=os.environ['version']
 with open('versions_hyd_host2.json') as f:
     data=json.load(f)
     data['configuration']['cfc_versions'][version]=True
