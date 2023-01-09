@@ -4,22 +4,23 @@ from git import Repo
 import os
 
 g = git.cmd.Git('https:\\github.com\\Harshitha-Butta\\Autoupdate_versions')
-g.pull()
 
-from git import Git
-g1=Git()
 
-g.checkout('cfc-hb')
-g.pull()
 
 
 def add_version(data, filename='versions_hyd_host2.json'):
     with open(filename,'w') as f:
         json.dump(data, f,indent=4)
         
-
+repo = Repo('C:\\git practice\\Connecting_to_remote_repo\\Autoupdate_versions')
+origin = repo.remote(name="origin")
+origin.pull()
+repo_heads=repo.heads
+repo_heads['cfc-hb'].checkout()
 #version=input()
-version = '21.9.0.49'
+
+version = '21.9.0.47'
+
 #version=os.environ['version']
 
 with open('versions_hyd_host2.json') as f:
@@ -33,16 +34,8 @@ with open('versions_hyd_host2.json') as f:
 
 add_version(data)
 
-repo=Repo(r'C:\git practice\checkout_branch\Autoupdate_versions')
-
-g.add('--all')
-g.commit('-m', 'commit message from python script', author='harshitha.butta@gmail.com')
+repo.index.add('.')
+repo.index.commit('commit message from python script')
 origin = repo.remote(name="origin")
 origin.push()
-g.checkout('main')
 
-master = repo.branches['main']
-current = repo.branches['cfc-hb']
-root = repo.merge_base(current, master)
-repo.index.merge_tree(master, base=root)
-repo.index.commit('merging current into master branch', parent_commits=(current.commit, master.commit))
