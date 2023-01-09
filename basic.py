@@ -13,7 +13,9 @@ def add_version(data, filename='versions_hyd_host2.json'):
     with open(filename,'w') as f:
         json.dump(data, f,indent=4)
         
-
+repo = Repo('C:\\git practice\\Connecting_to_remote_repo\\Autoupdate_versions')
+repo_heads=repo.heads
+repo_heads['cfc-hb'].checkout()
 #version=input()
 
 version = '21.9.0.47'
@@ -31,9 +33,8 @@ with open('versions_hyd_host2.json') as f:
 
 add_version(data)
 
-repo = Repo('C:\\git practice\\Connecting_to_remote_repo\\Autoupdate_versions')
-g.add('--all')
-g.commit('-m','commit message from python script',author='harshitha.butta@gmail.com')
+repo.index.add('--all')
+repo.index.commit('commit message from python script')
 origin = repo.remote(name="origin")
 origin.push()
 
